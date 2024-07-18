@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/hadish100/golestan-crawler/blob/master/images/icon.png">
+<img src="https://github.com/hadish100/golestan-crawler/blob/main/images/icon.png">
 </p>
 
 <h3>
@@ -7,11 +7,11 @@
 </h3>
 
 <p align="center">
-<img src="https://github.com/hadish100/golestan-crawler/blob/master/images/sample1.png">
+<img src="https://github.com/hadish100/golestan-crawler/blob/main/images/sample1.png">
 </p>
 
 <p align="center">
-<img src="https://github.com/hadish100/golestan-crawler/blob/master/images/sample2.png">
+<img src="https://github.com/hadish100/golestan-crawler/blob/main/images/sample2.png">
 </p>
 
 <h1>
@@ -24,7 +24,7 @@
 </h3>
 
 <p align="center">
-<img src="https://github.com/hadish100/golestan-crawler/blob/master/images/fields.jpg">
+<img src="https://github.com/hadish100/golestan-crawler/blob/main/images/fields.jpg">
 </p>
 
 <h3 align="right" > golestan_username :point_left: نام کاربری اکانت گلستان شما</h3>
