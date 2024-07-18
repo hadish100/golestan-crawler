@@ -1,0 +1,22 @@
+[
+    {
+        "course_code": "020320116",
+        "course_name": "فیزیک 2",
+        "course_grade": 18
+    },
+    {
+        "course_code": "990040222",
+        "course_name": "آمار و احتمالات مهندسی",
+        "course_grade": 15
+    },
+    {
+        "course_code": "040630142",
+        "course_name": "سیگنالها و سیستم ها",
+        "course_grade": 12.57
+    },
+    {
+        "course_code": "011250143",
+        "course_name": "جبر خطی",
+        "course_grade": null
+    }
+]
