@@ -33,7 +33,7 @@
 
 <h3 align="right" > golestan_username :point_right: نام کاربری اکانت گلستان شما</h3>
 <h3 align="right" > golestan_password :point_right: رمز عبور اکانت گلستان</h3>
-<h3 align="right" > telegram_bot_token :point_right: توکن ربات تلگرامی که وضعیت نمره ها تو اون ارسال می‌شه</h3>
+<h3 align="right" > telegram_bot_token :point_right: توکن ربات تلگرامی که پیام ها با اون ارسال می‌شه</h3>
 <h3 align="right" > grade_chat_id :point_right: آی‌دی عددی تلگرام فردی که پیام های مربوط به نمرات بهش ارسال می‌شه</h3>
 <h3 align="right" > course_chat_id :point_right: آی‌دی عددی تلگرام فردی که پیام های مربوط به گزارش ۱۰۲ بهش ارسال می‌شه</h3>
 <h3 align="right" > semester_to_watch :point_right: شماره ترمی که نمره های اون بررسی می‌شه (مثلا 4022)</h3>
@@ -41,7 +41,9 @@
 <h3>
 ✅
 بعد از پر کردن فایل می‌تونید پروژه رو با 
-node app.js
+node check_grades.js
+یا
+node check_courses.js
 اجرا کنید
 </h3>
 
