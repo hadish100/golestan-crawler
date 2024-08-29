@@ -85,9 +85,15 @@ async function alert_new_courses(course_report)
         msg += "\n";
         msg += "\n";
 
+        if(i>0 && i%10==0)
+        {
+            await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
+            msg = "";
+        }
+
     }
 
-    await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
+    if(msg!="") await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
 }
 
 async function alert_no_new_course()
