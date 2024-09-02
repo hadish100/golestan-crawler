@@ -1,6 +1,7 @@
 require('dotenv').config();
 const { Telegraf } = require('telegraf');
 const bot = new Telegraf(process.env.telegram_bot_token);
+const { sleep } = require('./captcha_solver');
 const { grade_chat_id } = process.env;
 const { course_chat_id } = process.env;
 
@@ -85,10 +86,11 @@ async function alert_new_courses(course_report)
         msg += "\n";
         msg += "\n";
 
-        if(i>0 && i%10==0)
+        if(i>0 && i%15==0)
         {
             await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
             msg = "";
+            await sleep(2000);
         }
 
     }
@@ -139,9 +141,16 @@ async function init_course_msg(course_report)
         msg += "\n";
         msg += "\n";
 
+        if(i>0 && i%15==0)
+        {
+            await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
+            msg = "";
+            await sleep(2000);
+        }
+
     }
 
-    await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
+    if(msg!="") await bot.telegram.sendMessage(course_chat_id, msg, {parse_mode: 'HTML'});
 }
 
 async function test()

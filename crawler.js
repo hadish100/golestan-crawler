@@ -260,6 +260,9 @@ async function check_golestan_for_new_courses()
 
             var courses = [];
             
+            var old_page_number = "1";
+            var new_page_number = "1";
+
             while(true)
             {
                 var course_trs = formBodyFrameDocument2.querySelectorAll("table#Table3 tbody tr");
@@ -272,6 +275,7 @@ async function check_golestan_for_new_courses()
                         course_name:course_trs[i].querySelectorAll("td")[1].innerText.replaceAll("ي","ی").replaceAll("ك","ک"),
                         course_prof:course_trs[i].querySelectorAll("td")[8].innerText.replaceAll("ي","ی").replaceAll("ك","ک").replace("\n",""),
                         course_time:course_trs[i].querySelectorAll("td")[9].innerText.replaceAll("ي","ی").replaceAll("ك","ک"),
+                        course_exam:course_trs[i].querySelectorAll("td")[10].innerText.replaceAll("ي","ی").replaceAll("ك","ک"),
                     })
                 }
 
@@ -284,8 +288,11 @@ async function check_golestan_for_new_courses()
 
                 commanderFrameDocument3.querySelectorAll("#MoveLeft")[0].click();
 
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                if(courses[courses.length-1].course_code == course_trs[course_trs.length-1].querySelectorAll("td")[0].innerText) break;
+                await new Promise(resolve => setTimeout(resolve, 500));
+
+                new_page_number = commanderFrameDocument3.querySelectorAll("#TextPage")[0].value;
+                if(new_page_number == old_page_number) break;
+                else old_page_number = new_page_number;
             }
 
             const frame4 = document.querySelector('iframe[name="Faci3"]');
@@ -338,6 +345,9 @@ async function check_golestan_for_new_courses()
             const formBodyFrame6 = headerFrameDocument5.querySelector('frame#Form_Body');
             const formBodyFrameDocument6 = formBodyFrame6.contentDocument || formBodyFrame6.contentWindow.document;
 
+            var secondary_old_page_number = "1";
+            var secondary_new_page_number = "1";
+
             while(true)
             {
                 var course_trs = formBodyFrameDocument6.querySelectorAll("table#Table3 tbody tr");
@@ -350,19 +360,23 @@ async function check_golestan_for_new_courses()
                         course_name:course_trs[i].querySelectorAll("td")[1].innerText.replaceAll("ي","ی").replaceAll("ك","ک"),
                         course_prof:course_trs[i].querySelectorAll("td")[8].innerText.replaceAll("ي","ی").replaceAll("ك","ک").replace("\n",""),
                         course_time:course_trs[i].querySelectorAll("td")[9].innerText.replaceAll("ي","ی").replaceAll("ك","ک"),
+                        course_exam:course_trs[i].querySelectorAll("td")[10].innerText.replaceAll("ي","ی").replaceAll("ك","ک"),
                     })
                 }
 
-                const frame3 = document.querySelector('iframe[name="Faci3"]');
+                const frame3 = document.querySelector('iframe[name="Faci4"]');
                 const frameDocument3 = frame3.contentDocument || frame3.contentWindow.document;
 
                 const commanderFrame3 = frameDocument3.querySelector('frame[name="Commander"]');
                 const commanderFrameDocument3 = commanderFrame3.contentDocument || commanderFrame3.contentWindow.document;
 
                 commanderFrameDocument3.querySelectorAll("#MoveLeft")[0].click();
+            
+                await new Promise(resolve => setTimeout(resolve, 500));
 
-                await new Promise(resolve => setTimeout(resolve, 1000));
-                if(courses[courses.length-1].course_code == course_trs[course_trs.length-1].querySelectorAll("td")[0].innerText) break;
+                secondary_new_page_number = commanderFrameDocument3.querySelectorAll("#TextPage")[0].value;
+                if(secondary_new_page_number == secondary_old_page_number) break;
+                else secondary_old_page_number = secondary_new_page_number;
 
             }
 
